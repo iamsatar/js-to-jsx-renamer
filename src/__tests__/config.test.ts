@@ -27,8 +27,7 @@ describe('config', () => {
       include: ['src/**/*.js'],
       exclude: ['**/*.test.js', '**/*.spec.js'],
       dryRun: false,
-      verbose: false,
-      backup: true
+      verbose: false
     });
   });
 
@@ -46,8 +45,7 @@ describe('config', () => {
       include: ['app/**/*.js'],
       exclude: ['**/*.spec.js'],
       dryRun: false,
-      verbose: true,
-      backup: true
+      verbose: true
     });
   });
 }); 
