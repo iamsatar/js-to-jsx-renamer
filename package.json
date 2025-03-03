@@ -11,7 +11,8 @@
     "start": "node dist/bin/cli.js",
     "dev": "tsc -w",
     "lint": "eslint . --ext .ts",
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint"
   },
