@@ -1,4 +1,4 @@
-import { readFile, rename, writeFile } from 'fs/promises';
+import { readFile, rename } from 'fs/promises';
 import { glob } from 'glob';
 import { basename, dirname, extname, join } from 'path';
 import type { Config, RenameResult } from './config.js';
@@ -22,11 +22,6 @@ async function checkIsReactComponent(filePath: string): Promise<boolean> {
     console.error(`Error reading file ${filePath}:`, error);
     return false;
   }
-}
-
-async function createBackup(filePath: string): Promise<void> {
-  const backupPath = `${filePath}.backup`;
-  await readFile(filePath).then(data => writeFile(backupPath, data));
 }
 
 export async function renameFiles(config: Config): Promise<RenameResult> {
@@ -59,9 +54,6 @@ export async function renameFiles(config: Config): Promise<RenameResult> {
         const newPath = join(dir, `${name}.jsx`);
 
         if (!config.dryRun) {
-          if (config.backup) {
-            await createBackup(file);
-          }
           await rename(file, newPath);
         }
 
