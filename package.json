@@ -1,0 +1,61 @@
+{
+  "name": "js-to-jsx-renamer",
+  "version": "1.0.0",
+  "description": "A CLI tool for seamlessly renaming .js files to .jsx in React projects. Supports exclusion of specific files and directories via a config file, ensuring a smooth migration from Create React App (CRA) to Vite ",
+  "main": "dist/index.js",
+  "bin": {
+    "js-to-jsx-renamer": "dist/bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/bin/cli.js",
+    "dev": "tsc -w",
+    "lint": "eslint . --ext .ts",
+    "test": "jest",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "@types/jest": "^29.5.12",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "glob": "^11.0.1",
+    "chalk": "^5.3.0"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": [
+    "js",
+    "jsx",
+    "renamer",
+    "file converter",
+    "js to jsx",
+    "rename files",
+    "react",
+    "vite",
+    "cra",
+    "migration",
+    "codebase refactor",
+    "file management",
+    "javascript",
+    "react migration"
+  ],
+  "author": "iamsatar",
+  "license": "MIT"
+}
