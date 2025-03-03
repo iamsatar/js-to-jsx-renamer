@@ -13,8 +13,7 @@ program
   .version('1.0.0')
   .option('-c, --config <path>', 'path to config file')
   .option('-d, --dry-run', 'show what would be done without making changes')
-  .option('-v, --verbose', 'show detailed logs')
-  .option('--no-backup', 'skip creating backup files');
+  .option('-v, --verbose', 'show detailed logs');
 
 program.parse();
 
@@ -29,8 +28,7 @@ async function main() {
     // Merge CLI options with config
     Object.assign(config, {
       dryRun: options.dryRun || config.dryRun,
-      verbose: options.verbose || config.verbose,
-      backup: options.backup !== false && config.backup !== false
+      verbose: options.verbose || config.verbose
     });
 
     if (config.dryRun) {

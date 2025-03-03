@@ -6,7 +6,6 @@ export interface Config {
   exclude: string[];
   dryRun?: boolean;
   verbose?: boolean;
-  backup?: boolean;
 }
 
 export interface RenameResult {
@@ -21,8 +20,7 @@ const DEFAULT_CONFIG: Config = {
   include: ['src/**/*.js'],
   exclude: ['**/*.test.js', '**/*.spec.js'],
   dryRun: false,
-  verbose: false,
-  backup: true
+  verbose: false
 };
 
 export async function loadConfig(configPath?: string): Promise<Config> {
