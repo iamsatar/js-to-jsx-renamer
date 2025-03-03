@@ -34,8 +34,8 @@ js-to-jsx-renamer
 With options:
 
 ```bash
-js-to-jsx-renamer --dry-run  # Preview changes without applying them
-js-to-jsx-renamer --verbose  # Show detailed logs
+js-to-jsx-renamer --dry-run    # Preview changes without applying them
+js-to-jsx-renamer --verbose    # Show detailed logs
 js-to-jsx-renamer --config ./custom-config.json  # Use custom config file
 ```
 
@@ -51,17 +51,15 @@ Create a `js-to-jsx-config.json` file in your project root:
     "**/*.spec.js",
     "src/serviceWorker.js"
   ],
-  "backup": true,
   "verbose": false
 }
 ```
 
 ## Options
 
-- `--dry-run`: Preview changes without applying them
-- `--verbose`: Show detailed logs
-- `--config <path>`: Specify a custom config file path
-- `--no-backup`: Skip creating backup files
+- `-d, --dry-run`: Preview changes without making changes
+- `-v, --verbose`: Show detailed logs
+- `-c, --config <path>`: Specify a custom config file path
 - `--help`: Show help information
 
 ## Contributing
@@ -70,4 +68,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-ISC 
+MIT
