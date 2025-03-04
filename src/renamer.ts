@@ -7,11 +7,6 @@ async function checkIsReactComponent(filePath: string): Promise<boolean> {
   try {
     const content = await readFile(filePath, 'utf-8');
     
-    // Check for React imports
-    if (content.includes('import React') || content.includes('from "react"') || content.includes("from 'react'")) {
-      return true;
-    }
-    
     // Check for JSX syntax
     if (content.includes('</') || content.match(/<[A-Z][A-Za-z0-9]*/) || content.match(/className=/)) {
       return true;
