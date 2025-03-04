@@ -5,9 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2024-03-03
+
+### Fixed
+
+- Improved React detection logic to avoid false positives with similarly named imports
+- Enhanced JSX pattern matching for better accuracy
+- Added support for more React import patterns
+
 ## [1.1.0] - 2024-03-03
 
 ### Changed
+
 - Simplified core functionality by removing backup feature
 - Enhanced JSX detection logic for better accuracy
 - Improved error handling and logging
@@ -15,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Streamlined configuration file format
 
 ### Removed
+
 - Backup functionality (use version control instead)
 - `--backup` flag from CLI
 - Backup-related configuration options
@@ -22,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-03-03
 
 ### Added
+
 - Initial release
 - Automatic detection of React components
 - JSX syntax detection
@@ -33,5 +44,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive test suite
 - MIT License
 
+[1.1.1]: https://github.com/iamsatar/js-to-jsx-renamer/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/iamsatar/js-to-jsx-renamer/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/iamsatar/js-to-jsx-renamer/releases/tag/v1.0.0 
+[1.0.0]: https://github.com/iamsatar/js-to-jsx-renamer/releases/tag/v1.0.0
