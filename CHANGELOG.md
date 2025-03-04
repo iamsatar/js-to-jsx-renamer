@@ -8,12 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.1] - 2024-03-03
 
 ### Fixed
+
 - Removed unnecessary React import check, focusing only on JSX syntax detection
 - Fixed false positives from React imports that weren't actually JSX files
 
 ## [1.1.0] - 2024-03-03
 
 ### Changed
+
 - Simplified core functionality by removing backup feature
 - Enhanced JSX detection logic for better accuracy
 - Improved error handling and logging
@@ -21,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Streamlined configuration file format
 
 ### Removed
+
 - Backup functionality (use version control instead)
 - `--backup` flag from CLI
 - Backup-related configuration options
@@ -28,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-03-03
 
 ### Added
+
 - Initial release
 - Automatic detection of React components
 - JSX syntax detection
