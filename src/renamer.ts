@@ -7,17 +7,30 @@ async function checkIsReactComponent(filePath: string): Promise<boolean> {
   try {
     const content = await readFile(filePath, 'utf-8');
     
-    // Check for JSX syntax
-    if (content.includes('</') || content.match(/<[A-Z][A-Za-z0-9]*/) || content.match(/className=/)) {
-      return true;
+    // Remove comments before checking for JSX
+    const uncommentedContent = content.replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '');
+    
+    // Check for JSX in actual code, but exclude HTML strings
+    const lines = uncommentedContent.split('\n');
+    for (const line of lines) {
+      // Skip lines that contain HTML strings (wrapped in single or double quotes)
+      if (line.match(/['"][^'"]*<[^>]*>[^'"]*['"]/)) continue;
+      
+      // Check for JSX-like syntax
+      if (line.includes('</') || 
+          line.match(/<[A-Z][A-Za-z0-9]*/) || 
+          line.match(/className=/)) {
+        return true;
+      }
     }
     
-    return false;
+    return false; // No JSX found
   } catch (error) {
     console.error(`Error reading file ${filePath}:`, error);
     return false;
   }
 }
+
 
 export async function renameFiles(config: Config): Promise<RenameResult> {
   const result: RenameResult = {
