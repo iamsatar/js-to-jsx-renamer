@@ -11,13 +11,11 @@ export async function checkIsReactComponent(filePath: string): Promise<boolean> 
     // Remove comments before checking for JSX
     const uncommentedContent = content.replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '');
     
-
-    // Check for JSX in actual code, but exclude HTML strings in single, double quotes, or backticks
+    // Check for JSX in actual code, but exclude HTML strings
     const lines = uncommentedContent.split('\n');
     for (const line of lines) {
-      // Skip lines that contain HTML strings wrapped in single, double quotes, or backticks
-      if (line.match(/(['"`])[^'"`]*<[^>]*>[^'"`]*\1/)) continue;
-
+      // Skip lines that contain HTML strings (wrapped in single or double quotes)
+      if (line.match(/['"][^'"]*<[^>]*>[^'"]*['"]/)) continue;
       
       // Check for JSX-like syntax
       if (line.includes('</') || 
