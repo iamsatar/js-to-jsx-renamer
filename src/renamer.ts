@@ -3,7 +3,7 @@ import { glob } from 'glob';
 import { basename, dirname, extname, join } from 'path';
 import type { Config, RenameResult } from './config.js';
 
-async function checkIsReactComponent(filePath: string): Promise<boolean> {
+export async function checkIsReactComponent(filePath: string): Promise<boolean> {
   try {
     const content = await readFile(filePath, 'utf-8');
     
