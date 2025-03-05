@@ -3,7 +3,6 @@ import { readFile, rename } from 'fs/promises';
 import { basename, dirname, extname, join } from 'path';
 import type { Config, RenameResult } from './config.js';
 
-
 export async function checkIsReactComponent(filePath: string): Promise<boolean> {
   try {
     const content = await readFile(filePath, 'utf-8');
