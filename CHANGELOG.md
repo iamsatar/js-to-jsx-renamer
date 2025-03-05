@@ -5,14 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.1.1] - 2024-03-03
+## [1.1.2] - 2025-03-05
+
+### Changed
+
+- Improved JSX detection to ignore JSX-like syntax in comments
+- Enhanced HTML string detection to handle both single and double quotes
+- Simplified JSX detection logic by removing comment-based checks
+
+## [1.1.1] - 2025-03-03
 
 ### Fixed
 
 - Removed unnecessary React import check, focusing only on JSX syntax detection
 - Fixed false positives from React imports that weren't actually JSX files
 
-## [1.1.0] - 2024-03-03
+## [1.1.0] - 2025-03-03
 
 ### Changed
 
@@ -28,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `--backup` flag from CLI
 - Backup-related configuration options
 
-## [1.0.0] - 2024-03-03
+## [1.0.0] - 2025-03-03
 
 ### Added
 
