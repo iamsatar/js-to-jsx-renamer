@@ -3,6 +3,7 @@ import { readFile, rename } from 'fs/promises';
 import { basename, dirname, extname, join } from 'path';
 import type { Config, RenameResult } from './config.js';
 
+
 export async function checkIsReactComponent(filePath: string): Promise<boolean> {
   try {
     const content = await readFile(filePath, 'utf-8');
@@ -10,11 +11,11 @@ export async function checkIsReactComponent(filePath: string): Promise<boolean> 
     // Remove comments before checking for JSX
     const uncommentedContent = content.replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '');
     
-    // Check for JSX in actual code, but exclude HTML strings
+    // Check for JSX in actual code, but exclude HTML strings in single, double quotes, or backticks
     const lines = uncommentedContent.split('\n');
     for (const line of lines) {
-      // Skip lines that contain HTML strings (wrapped in single or double quotes)
-      if (line.match(/['"][^'"]*<[^>]*>[^'"]*['"]/)) continue;
+      // Skip lines that contain HTML strings wrapped in single, double quotes, or backticks
+      if (line.match(/(['"`])[^'"`]*<[^>]*>[^'"`]*\1/)) continue;
       
       // Check for JSX-like syntax
       if (line.includes('</') || 
