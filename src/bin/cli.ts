@@ -10,7 +10,7 @@ const program = new Command();
 program
   .name('js-to-jsx-renamer')
   .description('CLI tool to rename .js files to .jsx in React projects')
-  .version('1.1.3')
+  .version('1.1.4')
   .option('-c, --config <path>', 'path to config file')
   .option('-d, --dry-run', 'show what would be done without making changes')
   .option('-v, --verbose', 'show detailed logs');
