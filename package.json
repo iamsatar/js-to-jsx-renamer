@@ -16,6 +16,10 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamsatar/js-to-jsx-renamer.git"
+  },
   "files": [
     "dist",
     "README.md",
