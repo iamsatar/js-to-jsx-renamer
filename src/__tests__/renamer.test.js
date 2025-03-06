@@ -35,4 +35,11 @@ describe('checkIsReactComponent', () => {
     const result = await checkIsReactComponent(filePath);
     expect(result).toBe(false);
   });
+
+
+  it('should return false for files with JSX-like syntax in backticks', async () => {
+    const filePath = join(MOCKS_DIR, 'jsx-in-backticks.js');
+    const result = await checkIsReactComponent(filePath);
+    expect(result).toBe(true);
+  });
 });
