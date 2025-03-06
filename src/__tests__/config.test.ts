@@ -25,7 +25,7 @@ describe('config', () => {
     const config = await loadConfig();
     expect(config).toEqual({
       include: ['src/**/*.js'],
-      exclude: ['**/*.test.js', '**/*.spec.js'],
+      exclude: ['**/*.test.js', '**/*.spec.js', 'mocks/**', 'node_modules/**'],
       dryRun: false,
       verbose: false
     });

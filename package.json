@@ -1,6 +1,6 @@
 {
   "name": "js-to-jsx-renamer",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A CLI tool for seamlessly renaming .js files to .jsx in React projects. Supports exclusion of specific files and directories via a config file, ensuring a smooth migration from Create React App (CRA) to Vite ",
   "main": "dist/index.js",
   "bin": {
@@ -24,8 +24,8 @@
   ],
   "types": "dist/index.d.ts",
   "devDependencies": {
-    "@types/node": "^22.13.9",
     "@types/jest": "^29.5.12",
+    "@types/node": "^22.13.9",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",
     "eslint": "^8.56.0",
@@ -34,9 +34,9 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
+    "chalk": "^5.3.0",
     "commander": "^12.0.0",
-    "glob": "^11.0.1",
-    "chalk": "^5.3.0"
+    "fast-glob": "^3.3.3"
   },
   "type": "module",
   "engines": {
