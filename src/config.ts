@@ -18,7 +18,7 @@ export interface RenameResult {
 
 const DEFAULT_CONFIG: Config = {
   include: ['src/**/*.js'],
-  exclude: ['**/*.test.js', '**/*.spec.js'],
+  exclude: ['**/*.test.js', '**/*.spec.js', 'mocks/**', 'node_modules/**'],
   dryRun: false,
   verbose: false
 };
